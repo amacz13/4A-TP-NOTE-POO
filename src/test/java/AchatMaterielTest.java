@@ -22,6 +22,6 @@ public class AchatMaterielTest {
     public void achatMateriel() {
         admin.achatMateriel(u);
         int nb = admin.getEntreprise().listeMateriel().size();
-        Assert.assertEquals("ajouterAuStock: fail", 1, nb);
+        Assert.assertEquals("Achat: fail", 1, nb);
     }
 }
