@@ -15,20 +15,20 @@ public class Administrateur extends Employe{
             Agence a = (Agence) f;
             if (a.getEntreprise().perdreMateriel(e)) {
                 return true;
-            } else return false;
+            }
         } else if (f instanceof Administrateur) {
             f.ajouterAuStock(e);
             Administrateur a = (Administrateur) f;
             if (a.getEntreprise().perdreMateriel(e)) {
                 return true;
-            } else return false;
+            }
         } else if (f instanceof Employe) {
             f.ajouterAuStock(e);
             Employe a = (Employe) f;
             if (e.isLimitationPretAuxAgence()) return false;
             if (a.getEntreprise().perdreMateriel(e)) {
                 return true;
-            } else return false;
+            }
         }
         return false;
     }
@@ -40,14 +40,14 @@ public class Administrateur extends Employe{
                 //a.getEntreprise().ajouterAuStock(e);
                 this.ajouterAuStock(e);
                 return true;
-            } else return false;
+            }
         } else if (f instanceof Employe) {
             if (f.perdreMateriel(e)) {
                 Employe a = (Employe) f;
                 //a.getEntreprise().ajouterAuStock(e);
                 this.ajouterAuStock(e);
                 return true;
-            } else return false;
+            }
         }
         return false;
     }
