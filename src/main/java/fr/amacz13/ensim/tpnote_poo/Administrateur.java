@@ -1,9 +1,15 @@
 package fr.amacz13.ensim.tpnote_poo;
 
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Administrateur extends Employe{
+
+    private static final Logger logger = LogManager.getLogger(Administrateur.class);
 
     public Administrateur(Agence a, Entreprise e){
         super(a,e);
@@ -72,7 +78,10 @@ public class Administrateur extends Employe{
 
     public void transfererMateriel(Emprunteur e, Empruntable f, Emprunteur g) {
         if (!(g instanceof Employe && f.isLimitationPretAuxAgence())) {
-            if (e.perdreMateriel(f)) g.ajouterAuStock(f);
+            if (e.perdreMateriel(f)){
+                g.ajouterAuStock(f);
+                logger.log(Level.INFO, "Transfert réalisé !");
+            }
         }
     }
 
