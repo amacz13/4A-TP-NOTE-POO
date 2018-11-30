@@ -95,4 +95,8 @@ public class Administrateur extends Employe{
         }
         for (Empruntable a :list) { e.perdreMateriel(a);}
     }
+
+    public void achatMateriel(Empruntable e) {
+        this.getEntreprise().ajouterAuStock(e);
+    }
 }
